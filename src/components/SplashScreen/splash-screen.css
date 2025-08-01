@@ -1,11 +1,11 @@
 /* Contenedor principal del splash */
-.splash-container {
+.splash-main-container {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 50;
+  z-index: 9998; /* Menor que tu loader que usa 9999 */
   background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #2563eb 100%);
   display: flex;
   align-items: center;
@@ -14,7 +14,7 @@
 }
 
 /* Elementos decorativos de fondo */
-.background-elements {
+.splash-background-elements {
   position: absolute;
   top: 0;
   left: 0;
@@ -24,15 +24,15 @@
 }
 
 /* Libros flotantes */
-.book {
+.splash-book {
   position: absolute;
   background: #93c5fd;
   border-radius: 2px;
   opacity: 0.2;
-  animation: pulse 2s infinite;
+  animation: splash-pulse 2s infinite;
 }
 
-.book-1 {
+.splash-book-1 {
   top: 80px;
   left: 40px;
   width: 64px;
@@ -40,7 +40,7 @@
   transform: rotate(12deg);
 }
 
-.book-2 {
+.splash-book-2 {
   top: 128px;
   left: 80px;
   width: 48px;
@@ -51,7 +51,7 @@
   animation-delay: 0.5s;
 }
 
-.book-3 {
+.splash-book-3 {
   top: 160px;
   right: 64px;
   width: 56px;
@@ -62,23 +62,23 @@
 }
 
 /* Lápices */
-.pencil {
+.splash-pencil {
   position: absolute;
   width: 8px;
   background: #fde047;
   border-radius: 4px;
   opacity: 0.3;
-  animation: bounce 2s infinite;
+  animation: splash-bounce 2s infinite;
 }
 
-.pencil-1 {
+.splash-pencil-1 {
   top: 240px;
   left: 128px;
   height: 80px;
   transform: rotate(45deg);
 }
 
-.pencil-2 {
+.splash-pencil-2 {
   bottom: 160px;
   right: 80px;
   height: 64px;
@@ -89,14 +89,14 @@
 }
 
 /* Círculos */
-.circle {
+.splash-circle {
   position: absolute;
   background: #93c5fd;
   border-radius: 50%;
-  animation: ping 2s infinite;
+  animation: splash-ping 2s infinite;
 }
 
-.circle-1 {
+.splash-circle-1 {
   top: 25%;
   right: 25%;
   width: 16px;
@@ -104,7 +104,7 @@
   opacity: 0.3;
 }
 
-.circle-2 {
+.splash-circle-2 {
   bottom: 33%;
   left: 33%;
   width: 12px;
@@ -114,7 +114,7 @@
   animation-delay: 1s;
 }
 
-.circle-3 {
+.splash-circle-3 {
   top: 50%;
   left: 25%;
   width: 8px;
@@ -125,7 +125,7 @@
 }
 
 /* Formas geométricas */
-.square {
+.splash-square {
   position: absolute;
   bottom: 80px;
   left: 64px;
@@ -134,10 +134,10 @@
   border: 2px solid #93c5fd;
   opacity: 0.2;
   transform: rotate(45deg);
-  animation: pulse 2s infinite;
+  animation: splash-pulse 2s infinite;
 }
 
-.triangle {
+.splash-triangle {
   position: absolute;
   top: 64px;
   right: 128px;
@@ -147,52 +147,52 @@
   border-right: 16px solid transparent;
   border-bottom: 24px solid #93c5fd;
   opacity: 0.25;
-  animation: bounce 2s infinite;
+  animation: splash-bounce 2s infinite;
   animation-delay: 0.3s;
 }
 
 /* Líneas de texto */
-.text-lines {
+.splash-text-lines {
   position: absolute;
 }
 
-.text-lines:first-of-type {
+.splash-text-lines:first-of-type {
   top: 33%;
   right: 48px;
 }
 
-.text-lines-bottom {
+.splash-text-lines-bottom {
   bottom: 25%;
   left: 48px;
 }
 
-.line {
+.splash-line {
   height: 4px;
   background: #dbeafe;
   margin-bottom: 12px;
-  animation: pulse 2s infinite;
+  animation: splash-pulse 2s infinite;
 }
 
-.line-1 {
+.splash-line-1 {
   width: 64px;
   opacity: 0.3;
   animation-delay: 0.2s;
 }
 
-.line-2 {
+.splash-line-2 {
   width: 48px;
   opacity: 0.25;
   animation-delay: 0.4s;
 }
 
-.line-3 {
+.splash-line-3 {
   width: 80px;
   background: #93c5fd;
   opacity: 0.2;
   animation-delay: 0.6s;
 }
 
-.line-4 {
+.splash-line-4 {
   width: 64px;
   background: #93c5fd;
   opacity: 0.25;
@@ -200,23 +200,23 @@
 }
 
 /* Graduación */
-.graduation {
+.splash-graduation {
   position: absolute;
   bottom: 128px;
   right: 128px;
 }
 
-.cap {
+.splash-cap {
   width: 32px;
   height: 32px;
   background: #60a5fa;
   opacity: 0.3;
   transform: rotate(12deg);
-  animation: bounce 2s infinite;
+  animation: splash-bounce 2s infinite;
   animation-delay: 1.2s;
 }
 
-.tassel {
+.splash-tassel {
   position: absolute;
   bottom: -4px;
   right: -16px;
@@ -228,7 +228,7 @@
 }
 
 /* Contenido principal */
-.main-content {
+.splash-main-content {
   position: relative;
   z-index: 10;
   text-align: center;
@@ -236,12 +236,12 @@
 }
 
 /* Título principal */
-.title-container {
+.splash-title-container {
   margin-bottom: 32px;
   margin-top: 32px;
 }
 
-.main-title {
+.splash-main-title {
   font-size: 4rem;
   font-weight: bold;
   color: white;
@@ -249,7 +249,7 @@
   margin: 0;
 }
 
-.letter {
+.splash-letter {
   display: inline-block;
   opacity: 0;
   transform: translateY(32px);
@@ -257,13 +257,13 @@
   text-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
 }
 
-.letter-visible {
+.splash-letter-visible {
   opacity: 1;
   transform: translateY(0);
 }
 
 /* Subtítulo */
-.subtitle-container {
+.splash-subtitle-container {
   margin-bottom: 48px;
   opacity: 0;
   transform: translateY(16px);
@@ -271,12 +271,12 @@
   transition-delay: 1s;
 }
 
-.subtitle-visible {
+.splash-subtitle-visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-.subtitle {
+.splash-subtitle {
   color: #dbeafe;
   font-size: 1.125rem;
   font-weight: 300;
@@ -285,35 +285,35 @@
 }
 
 /* Indicador de carga */
-.loading-container {
+.splash-loading-container {
   opacity: 0;
   transition: all 1s ease;
   transition-delay: 2s;
 }
 
-.loading-visible {
+.splash-loading-visible {
   opacity: 1;
 }
 
 /* Spinner */
-.spinner-container {
+.splash-spinner-container {
   display: flex;
   justify-content: center;
   margin-bottom: 16px;
 }
 
-.spinner-container > div {
+.splash-spinner-container > div {
   position: relative;
 }
 
-.spinner-bg {
+.splash-spinner-bg {
   width: 48px;
   height: 48px;
   border: 4px solid rgba(147, 197, 253, 0.3);
   border-radius: 50%;
 }
 
-.spinner {
+.splash-spinner {
   position: absolute;
   top: 0;
   left: 0;
@@ -322,43 +322,43 @@
   border: 4px solid transparent;
   border-top-color: #dbeafe;
   border-radius: 50%;
-  animation: spin 1s linear infinite;
+  animation: splash-spin 1s linear infinite;
 }
 
 /* Puntos de carga */
-.dots-container {
+.splash-dots-container {
   display: flex;
   justify-content: center;
   gap: 8px;
   margin-bottom: 16px;
 }
 
-.dot {
+.splash-dot {
   width: 8px;
   height: 8px;
   background: #dbeafe;
   border-radius: 50%;
-  animation: bounce 1.4s infinite;
+  animation: splash-bounce 1.4s infinite;
 }
 
-.dot-2 {
+.splash-dot-2 {
   animation-delay: 0.1s;
 }
 
-.dot-3 {
+.splash-dot-3 {
   animation-delay: 0.2s;
 }
 
 /* Texto de carga */
-.loading-text {
+.splash-loading-text {
   color: #dbeafe;
   font-size: 0.875rem;
   margin: 0;
-  animation: pulse 2s infinite;
+  animation: splash-pulse 2s infinite;
 }
 
 /* Pantalla de bienvenida */
-.welcome-screen {
+.splash-welcome-screen {
   min-height: 100vh;
   background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
   display: flex;
@@ -367,25 +367,25 @@
   padding: 16px;
 }
 
-.welcome-content {
+.splash-welcome-content {
   text-align: center;
 }
 
-.welcome-title {
+.splash-welcome-title {
   font-size: 3rem;
   font-weight: bold;
   color: #1e3a8a;
   margin-bottom: 16px;
 }
 
-.welcome-subtitle {
+.splash-welcome-subtitle {
   color: #1d4ed8;
   font-size: 1.125rem;
   margin: 0;
 }
 
-/* Animaciones */
-@keyframes pulse {
+/* Animaciones con prefijo splash- */
+@keyframes splash-pulse {
   0%,
   100% {
     opacity: 0.2;
@@ -395,7 +395,7 @@
   }
 }
 
-@keyframes bounce {
+@keyframes splash-bounce {
   0%,
   20%,
   53%,
@@ -415,7 +415,7 @@
   }
 }
 
-@keyframes ping {
+@keyframes splash-ping {
   75%,
   100% {
     transform: scale(2);
@@ -423,7 +423,7 @@
   }
 }
 
-@keyframes spin {
+@keyframes splash-spin {
   to {
     transform: rotate(360deg);
   }
@@ -431,21 +431,21 @@
 
 /* Responsive */
 @media (min-width: 768px) {
-  .main-title {
+  .splash-main-title {
     font-size: 5rem;
   }
 
-  .subtitle {
+  .splash-subtitle {
     font-size: 1.25rem;
   }
 
-  .welcome-title {
+  .splash-welcome-title {
     font-size: 4rem;
   }
 }
 
 @media (min-width: 1024px) {
-  .main-title {
+  .splash-main-title {
     font-size: 6rem;
   }
 }
