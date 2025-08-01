@@ -1,5 +1,3 @@
-"use client"
-
 import { useState, useEffect } from "react"
 import "./splash-screen.css"
 
@@ -8,11 +6,10 @@ export default function SplashScreen() {
   const [animationPhase, setAnimationPhase] = useState(0)
 
   useEffect(() => {
-    // Ajuste de tiempos para que sea más rápido
-    const timer1 = setTimeout(() => setAnimationPhase(1), 200) // Texto INAEBA aparece
-    const timer2 = setTimeout(() => setAnimationPhase(2), 700) // Subtítulo aparece
-    const timer3 = setTimeout(() => setAnimationPhase(3), 1200) // Indicador de carga aparece
-    const timer4 = setTimeout(() => setIsVisible(false), 1500) // Splash screen desaparece
+    const timer1 = setTimeout(() => setAnimationPhase(1), 300);
+    const timer2 = setTimeout(() => setAnimationPhase(2), 800);
+    const timer3 = setTimeout(() => setAnimationPhase(3), 1500);
+    const timer4 = setTimeout(() => setIsVisible(false), 2500);
 
     return () => {
       clearTimeout(timer1)
@@ -22,16 +19,7 @@ export default function SplashScreen() {
     }
   }, [])
 
-  if (!isVisible) {
-    return (
-      <div className="splash-welcome-screen">
-        <div className="splash-welcome-content">
-          <h1 className="splash-welcome-title">¡Bienvenido a INAEBA!</h1>
-          <p className="splash-welcome-subtitle">Tu aplicación está lista</p>
-        </div>
-      </div>
-    )
-  }
+  if (!isVisible) return null;
 
   return (
     <div className="splash-main-container">
@@ -93,7 +81,7 @@ export default function SplashScreen() {
 
         {/* Subtítulo */}
         <div className={`splash-subtitle-container ${animationPhase >= 2 ? "splash-subtitle-visible" : ""}`}>
-          <p className="splash-subtitle">Instituto Nacional para la Educación de los Adultos</p>
+          <p className="splash-subtitle">Instituto de Alfabetización y Educación Básica para Adultos</p>
         </div>
 
         {/* Indicador de carga */}
