@@ -12,7 +12,7 @@ export default function SplashScreen() {
     const timer2 = setTimeout(() => setAnimationPhase(2), 1500)
     const timer3 = setTimeout(() => setAnimationPhase(3), 2500)
     // Reducido de 4000ms a 3000ms para que aparezca más rápido
-    const timer4 = setTimeout(() => setIsVisible(false), 2000)
+    const timer4 = setTimeout(() => setIsVisible(false), 3000)
 
     return () => {
       clearTimeout(timer1)
