@@ -1,0 +1,382 @@
+/* ================================
+   VARIABLES DE COLORES POR ROL
+================================== */
+:root {
+  --empleado-primary: #0d6efd;
+  --empleado-primary-rgb: 13, 110, 253;
+  --supervisor-primary: #464a82;
+  --supervisor-primary-rgb: 70, 74, 130;
+  --enlace-primary: #11133d;
+  --enlace-primary-rgb: 17, 19, 61;
+}
+
+/* ================================
+   TEMAS POR ROL
+================================== */
+.empleadoTheme {
+  --bs-primary: var(--empleado-primary);
+  --bs-primary-rgb: var(--empleado-primary-rgb);
+}
+
+.supervisorTheme {
+  --bs-primary: var(--supervisor-primary);
+  --bs-primary-rgb: var(--supervisor-primary-rgb);
+}
+
+.enlaceTheme {
+  --bs-primary: var(--enlace-primary);
+  --bs-primary-rgb: var(--enlace-primary-rgb);
+}
+
+/* ================================
+   CLASES UTILITARIAS POR TEMA
+================================== */
+
+/* Empleado */
+.empleadoTheme .btnPrimary {
+  background-color: var(--empleado-primary);
+  border-color: var(--empleado-primary);
+  color: white;
+}
+
+.empleadoTheme .btnOutlinePrimary {
+  border-color: var(--empleado-primary);
+  color: var(--empleado-primary);
+}
+
+.empleadoTheme .btnOutlinePrimary:hover {
+  background-color: var(--empleado-primary);
+  border-color: var(--empleado-primary);
+  color: white;
+}
+
+.empleadoTheme .textPrimary {
+  color: var(--empleado-primary) !important;
+}
+
+.empleadoTheme .bgPrimary {
+  background-color: var(--empleado-primary) !important;
+}
+
+.empleadoTheme .bgPrimaryOpacity {
+  background-color: rgba(var(--empleado-primary-rgb), 0.1) !important;
+}
+
+.empleadoTheme .navbarPrimary {
+  background-color: var(--empleado-primary) !important;
+}
+
+/* Supervisor */
+.supervisorTheme .btnPrimary {
+  background-color: var(--supervisor-primary);
+  border-color: var(--supervisor-primary);
+  color: white;
+}
+
+.supervisorTheme .btnOutlinePrimary {
+  border-color: var(--supervisor-primary);
+  color: var(--supervisor-primary);
+}
+
+.supervisorTheme .btnOutlinePrimary:hover {
+  background-color: var(--supervisor-primary);
+  border-color: var(--supervisor-primary);
+  color: white;
+}
+
+.supervisorTheme .textPrimary {
+  color: var(--supervisor-primary) !important;
+}
+
+.supervisorTheme .bgPrimary {
+  background-color: var(--supervisor-primary) !important;
+}
+
+.supervisorTheme .bgPrimaryOpacity {
+  background-color: rgba(var(--supervisor-primary-rgb), 0.1) !important;
+}
+
+.supervisorTheme .navbarPrimary {
+  background-color: var(--supervisor-primary) !important;
+}
+
+/* Enlace Administrativo */
+.enlaceTheme .btnPrimary {
+  background-color: var(--enlace-primary);
+  border-color: var(--enlace-primary);
+  color: white;
+}
+
+.enlaceTheme .btnOutlinePrimary {
+  border-color: var(--enlace-primary);
+  color: var(--enlace-primary);
+}
+
+.enlaceTheme .btnOutlinePrimary:hover {
+  background-color: var(--enlace-primary);
+  border-color: var(--enlace-primary);
+  color: white;
+}
+
+.enlaceTheme .textPrimary {
+  color: var(--enlace-primary) !important;
+}
+
+.enlaceTheme .bgPrimary {
+  background-color: var(--enlace-primary) !important;
+}
+
+.enlaceTheme .bgPrimaryOpacity {
+  background-color: rgba(var(--enlace-primary-rgb), 0.1) !important;
+}
+
+.enlaceTheme .navbarPrimary {
+  background-color: var(--enlace-primary) !important;
+}
+
+/* ================================
+   BOTONES GENERALES
+================================== */
+.btnPrimary {
+  transition: all 0.3s ease;
+}
+
+.btnPrimary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(var(--bs-primary-rgb), 0.3);
+}
+
+.btnOutlinePrimary {
+  transition: all 0.3s ease;
+}
+
+.btnOutlinePrimary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(var(--bs-primary-rgb), 0.3);
+}
+
+/* ================================
+   TABS
+================================== */
+.nav-tabs .nav-link {
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.nav-tabs .nav-link.active {
+  border-radius: 8px;
+  border: none !important;
+}
+
+.nav-tabs .nav-link:hover {
+  background-color: rgba(var(--bs-primary-rgb), 0.05);
+  border: none;
+}
+
+.tabsContainer::-webkit-scrollbar {
+  height: 4px;
+}
+
+.tabsContainer::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.tabsContainer::-webkit-scrollbar-thumb {
+  background: var(--bs-primary);
+  border-radius: 2px;
+}
+
+/* ================================
+   TARJETAS Y LISTAS
+================================== */
+.card {
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+.list-group-item:hover {
+  background-color: rgba(var(--bs-primary-rgb), 0.02);
+}
+
+/* ================================
+   SCROLL PERSONALIZADO PARA REGISTROS
+================================== */
+.list-group-flush::-webkit-scrollbar {
+  width: 6px;
+}
+
+.list-group-flush::-webkit-scrollbar-track {
+  background: #f8f9fa;
+  border-radius: 3px;
+}
+
+.list-group-flush::-webkit-scrollbar-thumb {
+  background: var(--bs-primary);
+  border-radius: 3px;
+}
+
+.list-group-flush::-webkit-scrollbar-thumb:hover {
+  background: var(--bs-primary);
+  opacity: 0.8;
+}
+
+/* ================================
+   FORMULARIOS
+================================== */
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--bs-primary);
+  box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.15);
+}
+
+/* ================================
+   MODALES
+================================== */
+.modal-content {
+  border-radius: 16px;
+}
+
+.modal.show {
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-dialog {
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ================================
+   NOTIFICACIONES
+================================== */
+.notificationItem {
+  transition: all 0.3s ease;
+}
+
+.notificationItem:hover {
+  background-color: rgba(var(--bs-primary-rgb), 0.03) !important;
+}
+
+.notificationUnread {
+  background: linear-gradient(135deg, rgba(var(--bs-primary-rgb), 0.08) 0%, rgba(var(--bs-primary-rgb), 0.04) 100%);
+  border-left: 3px solid var(--bs-primary);
+}
+
+.notificationDropdown {
+  animation: slideDown 0.3s ease;
+}
+
+.notificationList {
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.notificationList::-webkit-scrollbar {
+  width: 6px;
+}
+
+.notificationList::-webkit-scrollbar-track {
+  background: #f8f9fa;
+}
+
+.notificationList::-webkit-scrollbar-thumb {
+  background: var(--bs-primary);
+  border-radius: 3px;
+}
+
+.notificationList::-webkit-scrollbar-thumb:hover {
+  background: var(--bs-primary);
+  opacity: 0.8;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================================
+   ZONA DE CARGA
+================================== */
+.uploadZone {
+  border-style: dashed !important;
+  background-color: #f8f9fa;
+}
+
+/* ================================
+   CLASES ADICIONALES PARA FACE MODAL
+================================== */
+.bg-supervisor {
+  background-color: var(--supervisor-primary) !important;
+}
+
+.bg-enlace {
+  background-color: var(--enlace-primary) !important;
+}
+
+.text-supervisor {
+  color: var(--supervisor-primary) !important;
+}
+
+.text-enlace {
+  color: var(--enlace-primary) !important;
+}
+
+/* ================================
+   MEDIA QUERIES
+================================== */
+@media (max-width: 576px) {
+  .btnPrimary:hover,
+  .btnOutlinePrimary:hover {
+    transform: none;
+  }
+
+  .modal-lg {
+    margin: 0.5rem;
+  }
+
+  .tabsContainer {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+
+  .nav-tabs .nav-link {
+    white-space: nowrap;
+  }
+
+  .notificationDropdown {
+    right: -50px !important;
+    width: 380px !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .notificationDropdown {
+    right: -20px !important;
+    width: 350px !important;
+  }
+}
