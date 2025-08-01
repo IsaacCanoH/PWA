@@ -1,3 +1,5 @@
+"use client"
+
 import { useState, useEffect } from "react"
 import "./splash-screen.css"
 
@@ -6,10 +8,11 @@ export default function SplashScreen() {
   const [animationPhase, setAnimationPhase] = useState(0)
 
   useEffect(() => {
-    const timer1 = setTimeout(() => setAnimationPhase(1), 300);
-    const timer2 = setTimeout(() => setAnimationPhase(2), 800);
-    const timer3 = setTimeout(() => setAnimationPhase(3), 1500);
-    const timer4 = setTimeout(() => setIsVisible(false), 2500);
+    const timer1 = setTimeout(() => setAnimationPhase(1), 500)
+    const timer2 = setTimeout(() => setAnimationPhase(2), 1500)
+    const timer3 = setTimeout(() => setAnimationPhase(3), 2500)
+    // Reducido de 4000ms a 3000ms para que aparezca más rápido
+    const timer4 = setTimeout(() => setIsVisible(false), 2000)
 
     return () => {
       clearTimeout(timer1)
@@ -90,7 +93,7 @@ export default function SplashScreen() {
 
         {/* Subtítulo */}
         <div className={`splash-subtitle-container ${animationPhase >= 2 ? "splash-subtitle-visible" : ""}`}>
-          <p className="splash-subtitle">Instituto de Alfabetización y Educación Básica para Adultos</p>
+          <p className="splash-subtitle">Instituto Nacional para la Educación de los Adultos</p>
         </div>
 
         {/* Indicador de carga */}
