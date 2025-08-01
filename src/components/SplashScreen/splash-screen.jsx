@@ -8,11 +8,11 @@ export default function SplashScreen() {
   const [animationPhase, setAnimationPhase] = useState(0)
 
   useEffect(() => {
-    const timer1 = setTimeout(() => setAnimationPhase(1), 500)
-    const timer2 = setTimeout(() => setAnimationPhase(2), 1500)
-    const timer3 = setTimeout(() => setAnimationPhase(3), 2500)
-    // Reducido de 4000ms a 3000ms para que aparezca más rápido
-    const timer4 = setTimeout(() => setIsVisible(false), 2000)
+    // Ajuste de tiempos para que sea más rápido
+    const timer1 = setTimeout(() => setAnimationPhase(1), 200) // Texto INAEBA aparece
+    const timer2 = setTimeout(() => setAnimationPhase(2), 700) // Subtítulo aparece
+    const timer3 = setTimeout(() => setAnimationPhase(3), 1200) // Indicador de carga aparece
+    const timer4 = setTimeout(() => setIsVisible(false), 1500) // Splash screen desaparece
 
     return () => {
       clearTimeout(timer1)

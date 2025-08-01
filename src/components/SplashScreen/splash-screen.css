@@ -288,7 +288,7 @@
 .splash-loading-container {
   opacity: 0;
   transition: all 1s ease;
-  transition-delay: 2s;
+  transition-delay: 2s; /* Este delay ahora es más largo que el tiempo total del splash, se ajustará */
 }
 
 .splash-loading-visible {
