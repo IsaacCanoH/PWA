@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import "../splash-screen.css" // Asegúrate de que la ruta sea correcta
+import "./splash-screen.css" // Asegúrate de que la ruta sea correcta
 
 export default function SplashScreen() {
   const [animationPhase, setAnimationPhase] = useState(0)
