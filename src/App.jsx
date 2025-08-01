@@ -33,3 +33,5 @@ const App = () => {
 
   return <>{isLoading ? <SplashScreen /> : <AppRoutes />}</>;
 };
+
+export default App;
