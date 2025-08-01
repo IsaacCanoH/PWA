@@ -6,10 +6,10 @@ export default function SplashScreen() {
   const [animationPhase, setAnimationPhase] = useState(0)
 
   useEffect(() => {
-    const timer1 = setTimeout(() => setAnimationPhase(1), 500)
-    const timer2 = setTimeout(() => setAnimationPhase(2), 1500)
-    const timer3 = setTimeout(() => setAnimationPhase(3), 2500)
-    const timer4 = setTimeout(() => setIsVisible(false), 4000)
+    const timer1 = setTimeout(() => setAnimationPhase(1), 300);
+    const timer2 = setTimeout(() => setAnimationPhase(2), 800);
+    const timer3 = setTimeout(() => setAnimationPhase(3), 1500);
+    const timer4 = setTimeout(() => setIsVisible(false), 2500);
 
     return () => {
       clearTimeout(timer1)
