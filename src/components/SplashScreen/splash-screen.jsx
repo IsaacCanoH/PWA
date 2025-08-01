@@ -95,11 +95,6 @@ export default function SplashScreen() {
         </div>
         {/* Indicador de carga */}
         <div className={`splash-loading-container ${animationPhase >= 3 ? "splash-loading-visible" : ""}`}>
-          {/* Spinner personalizado */}
-          <div className="splash-spinner-container">
-            <div className="splash-spinner-bg"></div>
-            <div className="splash-spinner"></div>
-          </div>
           {/* Puntos de carga */}
           <div className="splash-dots-container">
             <div className="splash-dot splash-dot-1"></div>
