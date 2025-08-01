@@ -11,6 +11,15 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  /* Añade una transición para la opacidad y visibilidad */
+  transition: opacity 1s ease-out, visibility 1s ease-out;
+}
+
+/* Nueva clase para el desvanecimiento */
+.splash-main-container.splash-fading-out {
+  opacity: 0;
+  visibility: hidden; /* Oculta completamente el elemento después de la transición */
+  pointer-events: none; /* Evita interacciones con el splash screen oculto */
 }
 
 /* Elementos decorativos de fondo */
@@ -31,18 +40,16 @@
   opacity: 0.2;
   animation: splash-pulse 2s infinite;
 }
-
 .splash-book-1 {
-  top: 80px;
-  left: 40px;
+  top: 10vh; /* Ajustado a vh */
+  left: 5vw; /* Ajustado a vw */
   width: 64px;
   height: 48px;
   transform: rotate(12deg);
 }
-
 .splash-book-2 {
-  top: 128px;
-  left: 80px;
+  top: 15vh; /* Ajustado a vh */
+  left: 10vw; /* Ajustado a vw */
   width: 48px;
   height: 32px;
   transform: rotate(-6deg);
@@ -50,10 +57,9 @@
   opacity: 0.25;
   animation-delay: 0.5s;
 }
-
 .splash-book-3 {
-  top: 160px;
-  right: 64px;
+  top: 20vh; /* Ajustado a vh */
+  right: 10vw; /* Ajustado a vw */
   width: 56px;
   height: 40px;
   transform: rotate(45deg);
@@ -70,17 +76,15 @@
   opacity: 0.3;
   animation: splash-bounce 2s infinite;
 }
-
 .splash-pencil-1 {
-  top: 240px;
-  left: 128px;
+  top: 30vh; /* Ajustado a vh */
+  left: 15vw; /* Ajustado a vw */
   height: 80px;
   transform: rotate(45deg);
 }
-
 .splash-pencil-2 {
-  bottom: 160px;
-  right: 80px;
+  bottom: 20vh; /* Ajustado a vh */
+  right: 12vw; /* Ajustado a vw */
   height: 64px;
   transform: rotate(-12deg);
   background: #facc15;
@@ -88,14 +92,13 @@
   animation-delay: 0.7s;
 }
 
-/* Círculos */
+/* Círculos (ya usaban porcentajes, lo cual es bueno) */
 .splash-circle {
   position: absolute;
   background: #93c5fd;
   border-radius: 50%;
   animation: splash-ping 2s infinite;
 }
-
 .splash-circle-1 {
   top: 25%;
   right: 25%;
@@ -103,7 +106,6 @@
   height: 16px;
   opacity: 0.3;
 }
-
 .splash-circle-2 {
   bottom: 33%;
   left: 33%;
@@ -113,7 +115,6 @@
   opacity: 0.25;
   animation-delay: 1s;
 }
-
 .splash-circle-3 {
   top: 50%;
   left: 25%;
@@ -127,8 +128,8 @@
 /* Formas geométricas */
 .splash-square {
   position: absolute;
-  bottom: 80px;
-  left: 64px;
+  bottom: 10vh; /* Ajustado a vh */
+  left: 8vw; /* Ajustado a vw */
   width: 48px;
   height: 48px;
   border: 2px solid #93c5fd;
@@ -136,11 +137,10 @@
   transform: rotate(45deg);
   animation: splash-pulse 2s infinite;
 }
-
 .splash-triangle {
   position: absolute;
-  top: 64px;
-  right: 128px;
+  top: 8vh; /* Ajustado a vh */
+  right: 15vw; /* Ajustado a vw */
   width: 0;
   height: 0;
   border-left: 16px solid transparent;
@@ -155,43 +155,36 @@
 .splash-text-lines {
   position: absolute;
 }
-
 .splash-text-lines:first-of-type {
-  top: 33%;
-  right: 48px;
+  top: 33vh; /* Ajustado a vh */
+  right: 5vw; /* Ajustado a vw */
 }
-
 .splash-text-lines-bottom {
-  bottom: 25%;
-  left: 48px;
+  bottom: 25vh; /* Ajustado a vh */
+  left: 5vw; /* Ajustado a vw */
 }
-
 .splash-line {
   height: 4px;
   background: #dbeafe;
   margin-bottom: 12px;
   animation: splash-pulse 2s infinite;
 }
-
 .splash-line-1 {
   width: 64px;
   opacity: 0.3;
   animation-delay: 0.2s;
 }
-
 .splash-line-2 {
   width: 48px;
   opacity: 0.25;
   animation-delay: 0.4s;
 }
-
 .splash-line-3 {
   width: 80px;
   background: #93c5fd;
   opacity: 0.2;
   animation-delay: 0.6s;
 }
-
 .splash-line-4 {
   width: 64px;
   background: #93c5fd;
@@ -202,10 +195,9 @@
 /* Graduación */
 .splash-graduation {
   position: absolute;
-  bottom: 128px;
-  right: 128px;
+  bottom: 15vh; /* Ajustado a vh */
+  right: 15vw; /* Ajustado a vw */
 }
-
 .splash-cap {
   width: 32px;
   height: 32px;
@@ -215,7 +207,6 @@
   animation: splash-bounce 2s infinite;
   animation-delay: 1.2s;
 }
-
 .splash-tassel {
   position: absolute;
   bottom: -4px;
@@ -240,7 +231,6 @@
   margin-bottom: 32px;
   margin-top: 32px;
 }
-
 .splash-main-title {
   font-size: 4rem;
   font-weight: bold;
@@ -248,7 +238,6 @@
   letter-spacing: 0.1em;
   margin: 0;
 }
-
 .splash-letter {
   display: inline-block;
   opacity: 0;
@@ -256,7 +245,6 @@
   transition: all 0.5s ease;
   text-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
 }
-
 .splash-letter-visible {
   opacity: 1;
   transform: translateY(0);
@@ -270,12 +258,10 @@
   transition: all 1s ease;
   transition-delay: 1s;
 }
-
 .splash-subtitle-visible {
   opacity: 1;
   transform: translateY(0);
 }
-
 .splash-subtitle {
   color: #dbeafe;
   font-size: 1.125rem;
@@ -288,9 +274,8 @@
 .splash-loading-container {
   opacity: 0;
   transition: all 1s ease;
-  transition-delay: 2s; /* Este delay ahora es más largo que el tiempo total del splash, se ajustará */
+  transition-delay: 0.5s; /* Ajustado para que aparezca más rápido después del subtítulo */
 }
-
 .splash-loading-visible {
   opacity: 1;
 }
@@ -301,18 +286,15 @@
   justify-content: center;
   margin-bottom: 16px;
 }
-
 .splash-spinner-container > div {
   position: relative;
 }
-
 .splash-spinner-bg {
   width: 48px;
   height: 48px;
   border: 4px solid rgba(147, 197, 253, 0.3);
   border-radius: 50%;
 }
-
 .splash-spinner {
   position: absolute;
   top: 0;
@@ -332,7 +314,6 @@
   gap: 8px;
   margin-bottom: 16px;
 }
-
 .splash-dot {
   width: 8px;
   height: 8px;
@@ -340,11 +321,9 @@
   border-radius: 50%;
   animation: splash-bounce 1.4s infinite;
 }
-
 .splash-dot-2 {
   animation-delay: 0.1s;
 }
-
 .splash-dot-3 {
   animation-delay: 0.2s;
 }
@@ -357,7 +336,7 @@
   animation: splash-pulse 2s infinite;
 }
 
-/* Pantalla de bienvenida */
+/* Pantalla de bienvenida (no usada en este contexto, pero mantenida del original) */
 .splash-welcome-screen {
   min-height: 100vh;
   background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
@@ -366,18 +345,15 @@
   justify-content: center;
   padding: 16px;
 }
-
 .splash-welcome-content {
   text-align: center;
 }
-
 .splash-welcome-title {
   font-size: 3rem;
   font-weight: bold;
   color: #1e3a8a;
   margin-bottom: 16px;
 }
-
 .splash-welcome-subtitle {
   color: #1d4ed8;
   font-size: 1.125rem;
@@ -394,7 +370,6 @@
     opacity: 0.4;
   }
 }
-
 @keyframes splash-bounce {
   0%,
   20%,
@@ -414,7 +389,6 @@
     transform: translate3d(0, -2px, 0);
   }
 }
-
 @keyframes splash-ping {
   75%,
   100% {
@@ -422,7 +396,6 @@
     opacity: 0;
   }
 }
-
 @keyframes splash-spin {
   to {
     transform: rotate(360deg);
@@ -434,16 +407,13 @@
   .splash-main-title {
     font-size: 5rem;
   }
-
   .splash-subtitle {
     font-size: 1.25rem;
   }
-
   .splash-welcome-title {
     font-size: 4rem;
   }
 }
-
 @media (min-width: 1024px) {
   .splash-main-title {
     font-size: 6rem;
