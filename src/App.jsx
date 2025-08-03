@@ -23,7 +23,7 @@ const App = () => {
         setTimeout(() => {
           sessionStorage.setItem("splashShown", "true");
           setIsLoading(false);
-        }, 4000); // <-- AJUSTADO AQUÍ
+        }, 3000); // <-- AJUSTADO AQUÍ
       }
     };
 
