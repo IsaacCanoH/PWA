@@ -1,87 +1,66 @@
-"use client"
-
 import { useState, useEffect } from "react"
-import "./splash-screen.css" // Asegúrate de que la ruta sea correcta
+import "./splash-screen.css"
 
 export default function SplashScreen() {
   const [animationPhase, setAnimationPhase] = useState(0)
-  const [isFadingOut, setIsFadingOut] = useState(false)
-  const [isMounted, setIsMounted] = useState(true) // Nuevo estado para controlar el desmontaje final
+  const [isVisible, setIsVisible] = useState(true)
 
   useEffect(() => {
-    // Fases de animación para la aparición del contenido
-    const timer1 = setTimeout(() => setAnimationPhase(1), 300) // INAEBA letters
-    const timer2 = setTimeout(() => setAnimationPhase(2), 800) // Subtitle
-    const timer3 = setTimeout(() => setAnimationPhase(3), 1500) // Loading indicator
+    // Secuencia de animaciones
+    const timer1 = setTimeout(() => setAnimationPhase(1), 500) 
+    const timer2 = setTimeout(() => setAnimationPhase(2), 1200) 
+    const timer3 = setTimeout(() => setAnimationPhase(3), 2000) 
+    const timer4 = setTimeout(() => setAnimationPhase(4), 2800) 
 
-    // Iniciar el desvanecimiento después de que todas las animaciones de contenido hayan terminado
-    // y se haya mostrado el splash screen por un tiempo.
-    const fadeOutStartTimer = setTimeout(() => {
-      setIsFadingOut(true)
-    }, 2500) // Empieza a desvanecerse después de 2.5 segundos
-
-    // Desmontar completamente el componente después de que la transición de desvanecimiento haya terminado
-    // (asumiendo una transición de 1 segundo en el CSS).
-    const unmountTimer = setTimeout(() => {
-      setIsMounted(false)
-    }, 2500 + 1000) // Tiempo total: 2.5s (contenido) + 1s (desvanecimiento) = 3.5 segundos
+    // Ocultar splash después de 4 segundos
+    const hideTimer = setTimeout(() => {
+      setIsVisible(false)
+    }, 4000)
 
     return () => {
       clearTimeout(timer1)
       clearTimeout(timer2)
       clearTimeout(timer3)
-      clearTimeout(fadeOutStartTimer)
-      clearTimeout(unmountTimer)
+      clearTimeout(timer4)
+      clearTimeout(hideTimer)
     }
   }, [])
 
-  // Si no está montado, no renderizar nada
-  if (!isMounted) return null
+  if (!isVisible) return null
 
   return (
-    <div className={`splash-main-container ${isFadingOut ? "splash-fading-out" : ""}`}>
+    <div className="inaeba-splash-wrapper">
       {/* Elementos decorativos de fondo */}
-      <div className="splash-background-elements">
-        {/* Libros flotantes */}
-        <div className="splash-book splash-book-1"></div>
-        <div className="splash-book splash-book-2"></div>
-        <div className="splash-book splash-book-3"></div>
-        {/* Lápices */}
-        <div className="splash-pencil splash-pencil-1"></div>
-        <div className="splash-pencil splash-pencil-2"></div>
-        {/* Círculos que representan puntos/notas */}
-        <div className="splash-circle splash-circle-1"></div>
-        <div className="splash-circle splash-circle-2"></div>
-        <div className="splash-circle splash-circle-3"></div>
-        {/* Formas geométricas educativas */}
-        <div className="splash-square"></div>
-        <div className="splash-triangle"></div>
-        {/* Líneas que simulan texto/escritura */}
-        <div className="splash-text-lines">
-          <div className="splash-line splash-line-1"></div>
-          <div className="splash-line splash-line-2"></div>
-        </div>
-        <div className="splash-text-lines splash-text-lines-bottom">
-          <div className="splash-line splash-line-3"></div>
-          <div className="splash-line splash-line-4"></div>
-        </div>
-        {/* Graduación/Birrete simulado */}
-        <div className="splash-graduation">
-          <div className="splash-cap"></div>
-          <div className="splash-tassel"></div>
-        </div>
+      <div className="inaeba-bg-elements">
+        <div className="inaeba-floating-shape inaeba-shape-1"></div>
+        <div className="inaeba-floating-shape inaeba-shape-2"></div>
+        <div className="inaeba-floating-shape inaeba-shape-3"></div>
+        <div className="inaeba-floating-shape inaeba-shape-4"></div>
+        <div className="inaeba-floating-shape inaeba-shape-5"></div>
+        <div className="inaeba-floating-shape inaeba-shape-6"></div>
       </div>
+
       {/* Contenido principal */}
-      <div className="splash-main-content">
-        {/* Texto INAEBA animado */}
-        <div className="splash-title-container">
-          <h1 className="splash-main-title">
+      <div className="inaeba-content-wrapper">
+        {/* Logo/Icono */}
+        <div className={`inaeba-logo-container ${animationPhase >= 1 ? "inaeba-logo-visible" : ""}`}>
+          <div className="inaeba-logo-circle">
+            <div className="inaeba-book-icon">
+              <div className="inaeba-book-pages"></div>
+              <div className="inaeba-book-spine"></div>
+            </div>
+          </div>
+        </div>
+
+        {/* Texto INAEBA */}
+        <div className="inaeba-title-wrapper">
+          <h1 className="inaeba-main-title">
             {"INAEBA".split("").map((letter, index) => (
               <span
                 key={index}
-                className={`splash-letter ${animationPhase >= 1 ? "splash-letter-visible" : ""}`}
+                className={`inaeba-title-letter ${animationPhase >= 2 ? "inaeba-letter-animate" : ""}`}
                 style={{
-                  transitionDelay: `${index * 100}ms`,
+                  animationDelay: `${index * 150}ms`,
                 }}
               >
                 {letter}
@@ -89,19 +68,18 @@ export default function SplashScreen() {
             ))}
           </h1>
         </div>
+
         {/* Subtítulo */}
-        <div className={`splash-subtitle-container ${animationPhase >= 2 ? "splash-subtitle-visible" : ""}`}>
-          <p className="splash-subtitle">Instituto de Alfabetización y Educación Básica para Adultos</p>
+        <div className={`inaeba-subtitle-wrapper ${animationPhase >= 3 ? "inaeba-subtitle-visible" : ""}`}>
+          <p className="inaeba-subtitle-text">Instituto de Alfabetización y Educación Básica para Adultos</p>
         </div>
+
         {/* Indicador de carga */}
-        <div className={`splash-loading-container ${animationPhase >= 3 ? "splash-loading-visible" : ""}`}>
-          {/* Puntos de carga */}
-          <div className="splash-dots-container">
-            <div className="splash-dot splash-dot-1"></div>
-            <div className="splash-dot splash-dot-2"></div>
-            <div className="splash-dot splash-dot-3"></div>
+        <div className={`inaeba-loader-wrapper ${animationPhase >= 4 ? "inaeba-loader-visible" : ""}`}>
+          <div className="inaeba-progress-bar">
+            <div className="inaeba-progress-fill"></div>
           </div>
-          <p className="splash-loading-text">Cargando tu experiencia educativa...</p>
+          <p className="inaeba-loading-text">Preparando tu experiencia educativa</p>
         </div>
       </div>
     </div>

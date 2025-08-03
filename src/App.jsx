@@ -19,10 +19,11 @@ const App = () => {
       } catch (err) {
         console.error("Error al cargar modelos:", err);
       } finally {
+        // Esperamos 4s completos, igual que SplashScreen
         setTimeout(() => {
           sessionStorage.setItem("splashShown", "true");
           setIsLoading(false);
-        }, 2000);
+        }, 4000); // <-- AJUSTADO AQUÍ
       }
     };
 
@@ -33,5 +34,6 @@ const App = () => {
 
   return <>{isLoading ? <SplashScreen /> : <AppRoutes />}</>;
 };
+
 
 export default App;
