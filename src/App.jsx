@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react"; // 👈 agrega Suspense
 import { useEffect, useState } from "react";
 import AppRoutes from "./routes/AppRoutes"
 import { loadModels } from "./services/faceApiService";
@@ -19,11 +19,10 @@ const App = () => {
       } catch (err) {
         console.error("Error al cargar modelos:", err);
       } finally {
-        // Esperamos 4s completos, igual que SplashScreen
         setTimeout(() => {
           sessionStorage.setItem("splashShown", "true");
           setIsLoading(false);
-        }, 4000); // <-- AJUSTADO AQUÍ
+        }, 4000); // igual que duración del splash
       }
     };
 
@@ -32,8 +31,17 @@ const App = () => {
     }
   }, [isLoading]);
 
-  return <>{isLoading ? <SplashScreen /> : <AppRoutes />}</>;
+  return (
+    <>
+      {isLoading ? (
+        <SplashScreen />
+      ) : (
+        <Suspense fallback={<div className="app-loader">Cargando aplicación...</div>}>
+          <AppRoutes />
+        </Suspense>
+      )}
+    </>
+  );
 };
-
 
 export default App;

@@ -13,7 +13,7 @@ export default defineConfig({
         name: 'Reloj Checador',
         short_name: 'Reloj Checador',
         description: 'Reloj Checador',
-        theme_color: '#ffffff',
+        theme_color: '#381313ff',
         background_color: '#ffffff',
         display: 'standalone',
         orientation: 'portrait',

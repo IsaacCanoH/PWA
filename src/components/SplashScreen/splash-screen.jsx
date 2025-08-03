@@ -3,7 +3,6 @@ import "./splash-screen.css"
 
 export default function SplashScreen() {
   const [animationPhase, setAnimationPhase] = useState(0)
-  const [isVisible, setIsVisible] = useState(true)
 
   useEffect(() => {
     // Secuencia de animaciones
@@ -11,11 +10,6 @@ export default function SplashScreen() {
     const timer2 = setTimeout(() => setAnimationPhase(2), 1200) 
     const timer3 = setTimeout(() => setAnimationPhase(3), 2000) 
     const timer4 = setTimeout(() => setAnimationPhase(4), 2800) 
-
-    // Ocultar splash después de 4 segundos
-    const hideTimer = setTimeout(() => {
-      setIsVisible(false)
-    }, 4000)
 
     return () => {
       clearTimeout(timer1)
@@ -25,8 +19,6 @@ export default function SplashScreen() {
       clearTimeout(hideTimer)
     }
   }, [])
-
-  if (!isVisible) return null
 
   return (
     <div className="inaeba-splash-wrapper">
